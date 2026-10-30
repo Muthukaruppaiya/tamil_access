@@ -3,9 +3,9 @@ import Icon from '../components/Icon'
 import BeforeAfter from '../components/BeforeAfter'
 import { Reveal } from '../components/Motion'
 import { ParallaxBand, ParallaxLayer } from '../components/Parallax'
-import { CtaBanner, PageHeader, ReelGrid, SectionTitle } from '../components/Sections'
+import { CtaBanner, InstagramBand, PageHeader, ReelGrid, SectionTitle } from '../components/Sections'
 import { business } from '../data/business'
-import { photos, reels, workGallery } from '../data/media'
+import { instagram, photos, reels, workGallery } from '../data/media'
 
 const columnSpeeds = [40, -60, 80]
 
@@ -27,20 +27,24 @@ export default function Gallery() {
         title="Our Work"
         subtitle="Real cars and real fittings from our Theni workshop."
         crumbs={[{ name: 'Gallery' }]}
-        image={photos.beigeSeats.src}
+        image={photos.sonetSeats.src}
       />
+
+      <InstagramBand />
 
       <section className="section">
         <div className="container">
           <SectionTitle eyebrow="Showcase" title="Recent projects">
-            Photos from our Google Maps listing.
+            Photos from our Instagram, @{instagram.handle}.
           </SectionTitle>
           <div className="pgallery">
             {columns.map((col, c) => (
               <ParallaxLayer key={c} speed={columnSpeeds[c]} className="pgallery__col">
                 {col.map((p) => (
                   <figure key={p.src} className="pgallery__item">
-                    <img src={p.src} alt={p.alt} loading="lazy" />
+                    <a href={p.href} target="_blank" rel="noopener noreferrer">
+                      <img src={p.src} alt={p.alt} loading="lazy" />
+                    </a>
                     <figcaption>{p.title}</figcaption>
                   </figure>
                 ))}
@@ -50,7 +54,7 @@ export default function Gallery() {
         </div>
       </section>
 
-      <ParallaxBand src={photos.stereo.src}>
+      <ParallaxBand src={photos.camera360.src}>
         <p className="eyebrow">Interactive</p>
         <h2>Before &amp; after, side by side.</h2>
       </ParallaxBand>
@@ -64,12 +68,12 @@ export default function Gallery() {
 
       <section className="section section--alt section--reels">
         <div className="container">
-          <SectionTitle eyebrow="Videos" title="Watch us on Google Maps" />
+          <SectionTitle eyebrow="Videos" title="Watch us on Instagram" />
           <ReelGrid items={reels} />
           <Reveal className="gallery__more">
-            <p>See more photos, videos and customer reviews on our Google profile.</p>
-            <a className="btn btn--primary" href={business.mapsUrl} target="_blank" rel="noopener noreferrer">
-              <Icon name="star" size={18} /> View on Google Maps
+            <p>More photos and videos are on our Instagram, updated from the Theni shop.</p>
+            <a className="btn btn--primary" href={instagram.reelsUrl} target="_blank" rel="noopener noreferrer">
+              <Icon name="instagram" size={18} /> Watch on Instagram
             </a>
           </Reveal>
         </div>

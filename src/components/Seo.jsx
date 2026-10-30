@@ -1,7 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import { SITE_URL, business } from '../data/business'
 
-const DEFAULT_IMAGE = '/images/shop/tamil-car-accessories-theni-storefront.jpg'
+const DEFAULT_IMAGE = '/images/instagram/post-02.jpg'
 
 export default function Seo({ title, description, path = '/', image = DEFAULT_IMAGE, keywords = [], jsonLd = [], noindex = false }) {
   const fullTitle = title ? `${title} | ${business.name} Theni` : `${business.name} | Best Car Accessories & Car Decors Shop in Theni`

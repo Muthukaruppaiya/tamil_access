@@ -3,6 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from 'react-router-dom'
 import Icon from './Icon'
 import Logo from './Logo'
 import { business, fullAddress, telLink, waLink } from '../data/business'
+import { instagram } from '../data/media'
 import { services } from '../data/services'
 
 const nav = [
@@ -72,9 +73,14 @@ function Footer() {
             Theni&apos;s trusted car accessories and car decor shop. Seat covers, Android stereos, lighting, floor mats and exterior styling,
             fitted by experts.
           </p>
-          <a className="rating-pill" href={business.googleProfile} target="_blank" rel="noopener noreferrer">
-            <Icon name="star" size={16} /> {business.rating} on Google &middot; {business.reviewCount}+ reviews
-          </a>
+          <div className="footer__pills">
+            <a className="rating-pill" href={instagram.url} target="_blank" rel="noopener noreferrer">
+              <Icon name="instagram" size={16} /> @{instagram.handle}
+            </a>
+            <a className="rating-pill" href={business.googleProfile} target="_blank" rel="noopener noreferrer">
+              <Icon name="star" size={16} /> {business.rating} on Google &middot; {business.reviewCount}+ reviews
+            </a>
+          </div>
         </div>
         <div>
           <h3>Services</h3>

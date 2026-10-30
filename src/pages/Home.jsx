@@ -4,11 +4,11 @@ import Icon from '../components/Icon'
 import BeforeAfter from '../components/BeforeAfter'
 import { Counter, Reveal } from '../components/Motion'
 import { ParallaxBand, ParallaxHero, ParallaxImage, ParallaxLayer } from '../components/Parallax'
-import { CtaBanner, FaqList, ReelGrid, SectionTitle, WorkStrip } from '../components/Sections'
+import { CtaBanner, FaqList, InstagramBand, ReelGrid, SectionTitle, WorkStrip } from '../components/Sections'
 import { SITE_URL, business, fullAddress, localBusinessSchema, telLink, waLink } from '../data/business'
 import { services } from '../data/services'
 import { faqs } from '../data/faqs'
-import { photos, reels, serviceImages, workGallery } from '../data/media'
+import { instagram, photos, reels, serviceImages, workGallery } from '../data/media'
 
 const websiteSchema = {
   '@context': 'https://schema.org',
@@ -43,7 +43,7 @@ export default function Home() {
         jsonLd={[localBusinessSchema, websiteSchema, faqSchema(faqs.slice(0, 5))]}
       />
 
-      <ParallaxHero background={photos.storefront} cards={[photos.beigeSeats, photos.stereo, photos.maroonSeats]}>
+      <ParallaxHero background={photos.swift360} cards={[photos.sonetSeats, photos.combo, photos.sunFilm]}>
         <p className="eyebrow">
           <Icon name="pin" size={16} /> New Bus Stand Road, Theni
         </p>
@@ -102,6 +102,8 @@ export default function Home() {
         </div>
       </section>
 
+      <InstagramBand />
+
       <section className="section" id="before-after">
         <div className="container">
           <SectionTitle eyebrow="01 · See the difference" title="Drag the line. Transform the interior.">
@@ -111,7 +113,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ParallaxBand src={photos.beigeSeats.src} tall>
+      <ParallaxBand src={photos.sonetSeats.src} tall>
         <p className="eyebrow">Crafted in Theni</p>
         <h2>Interiors that feel brand new.</h2>
         <p>Model-specific seat covers, quilted 7D mats and clean stitching on every car.</p>
@@ -148,13 +150,13 @@ export default function Home() {
 
       <section className="section section--alt section--reels">
         <div className="container">
-          <SectionTitle eyebrow="04 · Watch us" title="Shop videos on Google Maps">
-            Product walk-throughs, new arrivals and combo offers straight from our Theni shop.
+          <SectionTitle eyebrow="04 · Watch us" title="Shop videos on Instagram">
+            Product walk-throughs, new arrivals and combo offers from @{instagram.handle}.
           </SectionTitle>
           <ReelGrid items={reels} />
           <div className="is-center reels__more">
-            <a className="btn btn--primary" href={business.mapsUrl} target="_blank" rel="noopener noreferrer">
-              <Icon name="play" size={18} /> Watch all videos
+            <a className="btn btn--primary" href={instagram.reelsUrl} target="_blank" rel="noopener noreferrer">
+              <Icon name="instagram" size={18} /> Watch all reels
             </a>
           </div>
         </div>
@@ -163,9 +165,9 @@ export default function Home() {
       <section className="section">
         <div className="container split">
           <div className="stack-photos">
-            <ParallaxImage src={photos.maroonSeats.src} alt={photos.maroonSeats.alt} speed={60} className="stack-photos__main" />
+            <ParallaxImage src={photos.combo.src} alt={photos.combo.alt} speed={60} className="stack-photos__main" />
             <ParallaxLayer speed={-90} className="stack-photos__float">
-              <img src={photos.stereo.src} alt={photos.stereo.alt} loading="lazy" />
+              <img src={photos.subwoofer.src} alt={photos.subwoofer.alt} loading="lazy" />
             </ParallaxLayer>
           </div>
           <div>
@@ -205,7 +207,7 @@ export default function Home() {
         </div>
       </section>
 
-      <ParallaxBand src={photos.stereo.src}>
+      <ParallaxBand src={photos.camera360.src}>
         <p className="eyebrow">Smart dashboards</p>
         <h2>Android stereos with 360° cameras.</h2>
         <p>CarPlay, Android Auto, GPS and reverse cameras with neat, safe wiring.</p>
@@ -230,7 +232,9 @@ export default function Home() {
           <Reveal>
             <p className="eyebrow">08 · Visit us</p>
             <h2>Find Tamil Car Accessories in Theni</h2>
-            <ParallaxImage src={photos.storefront.src} alt={photos.storefront.alt} speed={40} className="visit-photo" />
+            <a href={photos.shop.href} target="_blank" rel="noopener noreferrer">
+              <ParallaxImage src={photos.shop.src} alt={photos.shop.alt} speed={40} className="visit-photo" />
+            </a>
             <ul className="contact-list">
               <li>
                 <Icon name="pin" /> <span>{fullAddress}</span>

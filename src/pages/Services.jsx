@@ -35,7 +35,7 @@ export default function Services() {
         title="Car Accessories & Fitting Services"
         subtitle="Complete car upgrades in Theni: interiors, audio, lighting, exterior styling and safety electronics."
         crumbs={[{ name: 'Services' }]}
-        image={photos.stereo.src}
+        image={photos.combo.src}
       />
 
       <section className="section">
@@ -68,7 +68,7 @@ export default function Services() {
         </div>
       </section>
 
-      <ParallaxBand src={photos.maroonSeats.src} tall>
+      <ParallaxBand src={photos.sonetSeats.src} tall>
         <p className="eyebrow">One shop, every upgrade</p>
         <h2>Interiors, audio, lighting and safety.</h2>
         <p>Same-day fitting for most jobs at our Theni workshop.</p>

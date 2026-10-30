@@ -13,7 +13,7 @@ export default function Faq() {
         description={`Answers to common questions about ${business.name} in Theni: location, timings, products, fitting, warranty and WhatsApp quotes.`}
         jsonLd={[faqSchema(faqs), breadcrumbSchema([{ name: 'FAQ', path: '/faq' }])]}
       />
-      <PageHeader eyebrow="Help" title="Frequently Asked Questions" subtitle="Everything you need to know before visiting our shop." crumbs={[{ name: 'FAQ' }]} image={photos.ertiga.src} />
+      <PageHeader eyebrow="Help" title="Frequently Asked Questions" subtitle="Everything you need to know before visiting our shop." crumbs={[{ name: 'FAQ' }]} image={photos.doorGuard.src} />
       <section className="section">
         <div className="container container--narrow">
           <FaqList items={faqs} />

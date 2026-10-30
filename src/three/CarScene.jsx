@@ -82,7 +82,7 @@ export function Wheel({ position = [0, 0, 0], radius = 0.4, spin = true, rimColo
             ))}
             <mesh position={[0, 0, side * 0.03]} rotation={[Math.PI / 2, 0, 0]}>
               <cylinderGeometry args={[radius * 0.16, radius * 0.16, 0.04, 24]} />
-              <meshStandardMaterial color="#3b7ea8" metalness={0.5} roughness={0.35} />
+              <meshStandardMaterial color="#e2b007" metalness={0.5} roughness={0.35} />
             </mesh>
           </group>
         ))}
@@ -167,11 +167,11 @@ function Turntable() {
     <group position={[0, -0.62, 0]}>
       <mesh rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <circleGeometry args={[3.2, 64]} />
-        <meshStandardMaterial color="#eef2f6" metalness={0.1} roughness={0.6} />
+        <meshStandardMaterial color="#fff3df" metalness={0.1} roughness={0.6} />
       </mesh>
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, 0.005, 0]}>
         <ringGeometry args={[3.05, 3.2, 96]} />
-        <meshStandardMaterial color="#3b7ea8" roughness={0.4} />
+        <meshStandardMaterial color="#e2b007" roughness={0.4} />
       </mesh>
     </group>
   )
@@ -182,7 +182,7 @@ function Lights() {
     <>
       <ambientLight intensity={0.7} />
       <spotLight position={[5, 8, 5]} angle={0.45} penumbra={1} intensity={60} castShadow color="#ffffff" />
-      <pointLight position={[-4, 3, -3]} intensity={18} color="#d7e8f2" />
+      <pointLight position={[-4, 3, -3]} intensity={18} color="#fff3df" />
       <Environment resolution={256} frames={1}>
         <Lightformer form="rect" intensity={4} position={[0, 5, 0]} rotation-x={Math.PI / 2} scale={[10, 3, 1]} />
         <Lightformer form="rect" intensity={2} position={[-6, 1, 0]} rotation-y={Math.PI / 2} scale={[10, 2, 1]} />

@@ -5,9 +5,9 @@ import Icon from './Icon'
 import { Reveal } from './Motion'
 import { HorizontalScroll, ParallaxLayer, useMotionScale } from './Parallax'
 import { business, telLink, waLink } from '../data/business'
-import { photos } from '../data/media'
+import { instagram, logoSrc, photos } from '../data/media'
 
-export function PageHeader({ eyebrow, title, subtitle, crumbs = [], image = photos.storefront.src }) {
+export function PageHeader({ eyebrow, title, subtitle, crumbs = [], image = photos.swift360.src }) {
   const ref = useRef(null)
   const scale = useMotionScale()
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
@@ -127,7 +127,7 @@ function Reel({ reel }) {
     )
   }
   return (
-    <a className="reel" href={business.mapsUrl} target="_blank" rel="noopener noreferrer" aria-label={`Watch "${reel.title}" on Google Maps`}>
+    <a className="reel" href={reel.href || instagram.reelsUrl} target="_blank" rel="noopener noreferrer" aria-label={`Watch "${reel.title}" on Instagram`}>
       <span className="reel__btn">
         <img src={reel.poster} alt="" loading="lazy" />
         <span className="reel__play">
@@ -148,18 +148,38 @@ export function WorkStrip({ items, title, eyebrow }) {
       <div className="hscroll__intro">
         {eyebrow && <p className="eyebrow">{eyebrow}</p>}
         <h2>{title}</h2>
-        <p className="muted">Real cars, fitted at our Theni workshop. Scroll or swipe to explore.</p>
+        <p className="muted">Latest looks from our Instagram. Scroll or swipe to explore.</p>
         <Link to="/gallery" className="btn btn--ghost">
           Full gallery <Icon name="arrow" size={16} />
         </Link>
       </div>
       {items.map((p, i) => (
         <figure key={p.src} className={`work-card ${i % 2 ? 'is-low' : ''}`}>
-          <img src={p.src} alt={p.alt} loading="lazy" draggable="false" />
+          <a href={p.href || instagram.url} target="_blank" rel="noopener noreferrer">
+            <img src={p.src} alt={p.alt} loading="lazy" draggable="false" />
+          </a>
           <figcaption>{p.title}</figcaption>
         </figure>
       ))}
     </HorizontalScroll>
+  )
+}
+
+export function InstagramBand() {
+  return (
+    <section className="ig-band">
+      <div className="container ig-band__inner">
+        <img className="ig-band__logo" src={logoSrc} alt="" width="64" height="64" />
+        <div>
+          <p className="eyebrow">On Instagram</p>
+          <h2>@{instagram.handle}</h2>
+          <p>Photos, reels and offers from the Theni shop. {instagram.followers} people already follow along.</p>
+        </div>
+        <a className="btn btn--primary" href={instagram.url} target="_blank" rel="noopener noreferrer">
+          <Icon name="instagram" size={18} /> Follow
+        </a>
+      </div>
+    </section>
   )
 }
 

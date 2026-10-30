@@ -21,6 +21,8 @@ export const business = {
   reviewCount: 53,
   category: 'Car stereo store',
   googleProfile: 'https://www.google.com/maps/place/Tamil+Car+Accessories/@10.0429048,77.4969197,18z',
+  instagram: 'https://www.instagram.com/tamil_car_accessories1/',
+  instagramHandle: 'tamil_car_accessories1',
   mapsUrl: 'https://www.google.com/maps/place/Tamil+Car+Accessories/@10.0429048,77.4969197,18z/data=!4m6!3m5!1s0x3b076bac2633ed9f:0xfb71bca7276a4a6d!8m2!3d10.0429048!4d77.4969197!16s%2Fg%2F11mt4jhffq',
   directionsUrl: 'https://www.google.com/maps/dir/?api=1&destination=10.0429048,77.4969197',
   mapEmbed:
@@ -60,11 +62,11 @@ export const localBusinessSchema = {
   url: SITE_URL,
   telephone: business.phone,
   image: [
-    `${SITE_URL}/images/shop/tamil-car-accessories-theni-storefront.jpg`,
-    `${SITE_URL}/images/shop/beige-quilted-seat-covers.jpg`,
-    `${SITE_URL}/images/shop/android-stereo-360-camera-install.jpg`,
+    `${SITE_URL}/images/instagram/logo.jpg`,
+    `${SITE_URL}/images/instagram/post-02.jpg`,
+    `${SITE_URL}/images/instagram/post-07.jpg`,
   ],
-  logo: `${SITE_URL}/logo.svg`,
+  logo: `${SITE_URL}/images/instagram/logo.jpg`,
   priceRange: '₹₹',
   address: {
     '@type': 'PostalAddress',
@@ -85,5 +87,5 @@ export const localBusinessSchema = {
     },
   ],
   areaServed: business.serviceAreas.map((name) => ({ '@type': 'City', name })),
-  sameAs: [business.mapsUrl],
+  sameAs: [business.instagram, business.mapsUrl],
 }

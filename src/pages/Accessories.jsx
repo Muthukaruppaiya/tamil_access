@@ -26,7 +26,7 @@ export default function Accessories() {
         title="Car Accessories Collection"
         subtitle="Hundreds of accessories in store for every car model. Enquire on WhatsApp for availability and the best price."
         crumbs={[{ name: 'Accessories' }]}
-        image={photos.maroonSeats.src}
+        image={photos.subwoofer.src}
       />
 
       <section className="section">

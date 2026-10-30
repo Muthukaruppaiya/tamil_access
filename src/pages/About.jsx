@@ -28,7 +28,7 @@ export default function About() {
         title="About Tamil Car Accessories"
         subtitle="A passion for cars, a commitment to quality, and a shop built for the drivers of Theni."
         crumbs={[{ name: 'About' }]}
-        image={photos.storefront.src}
+        image={photos.shop.src}
       />
 
       <section className="section">
@@ -49,15 +49,15 @@ export default function About() {
             </p>
           </Reveal>
           <div className="stack-photos">
-            <ParallaxImage src={photos.storefront.src} alt={photos.storefront.alt} speed={60} className="stack-photos__main" />
+            <ParallaxImage src={photos.shop.src} alt={photos.shop.alt} speed={60} className="stack-photos__main" />
             <ParallaxLayer speed={-80} className="stack-photos__float">
-              <img src={photos.beigeSeats.src} alt={photos.beigeSeats.alt} loading="lazy" />
+              <img src={photos.sonetSeats.src} alt={photos.sonetSeats.alt} loading="lazy" />
             </ParallaxLayer>
           </div>
         </div>
       </section>
 
-      <ParallaxBand src={photos.maroonSeats.src} tall>
+      <ParallaxBand src={photos.sonetSeats.src} tall>
         <p className="eyebrow">Our promise</p>
         <h2>We make your car proud.</h2>
         <p>Comfortable, memorable drives start with the right accessories and an honest fit.</p>
@@ -96,7 +96,7 @@ export default function About() {
               ))}
             </Reveal>
           </div>
-          <ParallaxImage src={photos.ertiga.src} alt={photos.ertiga.alt} speed={70} className="about-photo" />
+          <ParallaxImage src={photos.swift360.src} alt={photos.swift360.alt} speed={70} className="about-photo" />
         </div>
       </section>
 
